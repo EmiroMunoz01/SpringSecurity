@@ -21,7 +21,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
     @GetMapping("/index1")
     public String index1() {
         return "inicioSeguro";
@@ -39,9 +38,7 @@ public class UserController {
 
     @PostMapping("/create/user")
     public User createUser(@RequestBody User user) {
-
         return this.userService.saveUser(user);
-
     }
 
     @GetMapping("/get-by-id/user/{id}")
