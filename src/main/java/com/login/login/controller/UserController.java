@@ -23,12 +23,12 @@ public class UserController {
 
     @GetMapping("/index1")
     public String index1() {
-        return "inicioSeguro";
+        return "Home is secure";
     }
 
     @GetMapping("/index2")
     public String index2() {
-        return "inicioNOSeguro";
+        return "Home is not secure";
     }
 
     @GetMapping("/get-all/users")
