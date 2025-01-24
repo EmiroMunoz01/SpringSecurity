@@ -21,6 +21,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+    @GetMapping("/index1")
+    public String index1() {
+        return "inicioSeguro";
+    }
+
+    @GetMapping("/index2")
+    public String index2() {
+        return "inicioNOSeguro";
+    }
+
     @GetMapping("/get-all/users")
     public List<User> getAllUsers() {
         return this.userService.getAllUsers();
