@@ -14,22 +14,32 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+
+    //First Configuration
+//    @Bean
+//    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+//        return httpSecurity
+//                .authorizeHttpRequests()
+//                    .requestMatchers("/api-jwt/index2").permitAll()
+//                    .anyRequest().authenticated()
+//                .and()
+//                .formLogin().permitAll()
+//                .and()
+//                .build();
+//
+//    }
+
+    //Second Configuration
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+
         return httpSecurity
-                .authorizeHttpRequests()
-                    .requestMatchers("/api-jwt/index2").permitAll()
-                    .anyRequest().authenticated()
-                .and()
+                .authorizeHttpRequests(authorizeRequests -> {
+                    authorizeRequests.requestMatchers("/api-jwt/index2").permitAll();
+                    authorizeRequests.anyRequest().authenticated();
+                })
                 .formLogin().permitAll()
                 .and()
                 .build();
-
-
-
-
-
     }
-
-
 }
